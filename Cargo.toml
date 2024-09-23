@@ -1,0 +1,21 @@
+[package]
+name = "cargobench"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "cargobenchlib"
+path = "src/lib.rs"
+doctest = false
+
+[dependencies]
+tokio = { version = "1", features = ["tracing","rt-multi-thread"] }
+serde = {version="1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+criterion = { version = "0", features= ["async_tokio"] }
+
+[[bench]]
+name = "benchmark"
+harness = false
