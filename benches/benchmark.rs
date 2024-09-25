@@ -11,7 +11,7 @@ async fn heap(levels: u32) {
 fn process_heap(library: Box<Library>, levels: u32) -> Box<Library> {
     match levels {
         0 => library,
-        x => return process_heap(library, x - 1),
+        x => process_heap(library, x - 1),
     }
 }
 
@@ -24,7 +24,7 @@ async fn stack(levels: u32) {
 fn process_stack(library: Library, levels: u32) -> Library {
     match levels {
         0 => library,
-        x => return process_stack(library, x - 1),
+        x => process_stack(library, x - 1),
     }
 }
 
@@ -37,7 +37,7 @@ async fn stack_with_clone(levels: u32) {
 fn process_stack_with_clone(library: Library, levels: u32) -> Library {
     match levels {
         0 => library,
-        x => return process_stack_with_clone(library.clone(), x - 1),
+        x => process_stack_with_clone(library.clone(), x - 1),
     }
 }
 
@@ -50,7 +50,7 @@ async fn stack_with_ref(levels: u32) {
 fn process_stack_with_ref(library: &Library, levels: u32) -> &Library {
     match levels {
         0 => library,
-        x => return process_stack_with_ref(library, x - 1),
+        x => process_stack_with_ref(library, x - 1),
     }
 }
 
